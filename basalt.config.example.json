@@ -1,0 +1,38 @@
+{
+  "_WARNING": "EXAMPLE ONLY — these values are NOT financial advice. You MUST choose your own values. See README for what each parameter does.",
+
+  "provider": {
+    "type": "syenite",
+    "url": "${SYENITE_URL}",
+    "apiKey": "${SYENITE_API_KEY}"
+  },
+
+  "wallet": {
+    "privateKey": "${WALLET_PRIVATE_KEY}"
+  },
+
+  "policy": {
+    "_NOTE": "ALL policy parameters are REQUIRED. Basalt refuses to start without them. These example values are NOT recommendations.",
+    "maxLTV": 40,
+    "healthFactorFloor": 1.5,
+    "emergencyHealthFactor": 1.2,
+    "maxPositionUSD": 100000,
+    "minProfitOverGasMultiple": 2.0,
+    "deleveragePercent": 20,
+    "allowedProtocols": ["aave-v3", "morpho", "spark"],
+    "monitorIntervalMinutes": 5
+  },
+
+  "notifications": {
+    "webhookUrl": "${WEBHOOK_URL}",
+    "onWarning": true,
+    "onCritical": true,
+    "onEmergency": true,
+    "onRejection": true
+  },
+
+  "api": {
+    "port": 3100,
+    "auth": "${API_AUTH_TOKEN}"
+  }
+}

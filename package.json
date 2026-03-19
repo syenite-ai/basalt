@@ -1,0 +1,63 @@
+{
+  "name": "@syenite-ai/basalt",
+  "version": "0.1.0",
+  "description": "Policy enforcement runtime for DeFi agents. Your rules, deterministically enforced.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./providers/syenite": {
+      "import": "./dist/providers/syenite.js",
+      "types": "./dist/providers/syenite.d.ts"
+    }
+  },
+  "bin": {
+    "basalt": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js start",
+    "dev": "tsx src/cli.ts start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "defi",
+    "agent",
+    "risk",
+    "policy",
+    "mcp",
+    "syenite",
+    "firewall"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syenite-ai/basalt.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "hono": "^4.7.0",
+    "@hono/node-server": "^1.13.0",
+    "pg": "^8.13.0",
+    "viem": "^2.23.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
