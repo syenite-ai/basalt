@@ -105,9 +105,10 @@ export class Validator {
     const checks: CheckResult[] = [];
 
     // 1. Protocol whitelist
-    const protocol = proposal.protocol ?? proposal.deployTo?.split('-')[0] ?? '';
+    const protocol = proposal.protocol ?? '';
+    const target = (proposal.deployTo ?? protocol).toLowerCase();
     const protoAllowed = this.policy.allowedProtocols.some(
-      (p) => protocol.toLowerCase().startsWith(p.toLowerCase()),
+      (p) => target.startsWith(p.toLowerCase()) || protocol.toLowerCase() === p.toLowerCase(),
     );
     checks.push({
       rule: 'protocolWhitelist',
